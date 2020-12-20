@@ -22,7 +22,7 @@ VirtualProperties::VirtualProperties(QWidget *parent) :
 	connect(ui->checkBox_keepratio, SIGNAL(stateChanged(int)), this,
 		SLOT(onClickKeepAspectRatio()));
 
-	config_t* config = obs_frontend_get_global_config();
+	config_t* config = GetConfigStore();
 	config_set_default_bool(config, "VirtualOutput", "AutoStart", false);
 	config_set_default_bool(config, "VirtualOutput", "HoriFlip", false);
 	config_set_default_bool(config, "VirtualOutput", "KeepRatio", false);
@@ -140,7 +140,7 @@ void VirtualProperties::closeEvent(QCloseEvent *event)
 
 void VirtualProperties::SaveSetting()
 {
-	config_t* config = obs_frontend_get_global_config();
+	config_t* config = GetConfigStore();
 	if (config) {
 		bool autostart = ui->checkBox_auto->isChecked();
 		bool hori_flip = ui->checkBox_horiflip->isChecked();

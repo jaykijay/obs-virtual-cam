@@ -1,4 +1,4 @@
-﻿name: 'CI Windows On-Push'
+﻿name: 'testme'
 
 on:
   push:

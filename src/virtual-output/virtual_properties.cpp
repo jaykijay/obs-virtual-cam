@@ -145,7 +145,7 @@ void VirtualProperties::SaveSetting()
 		bool autostart = ui->checkBox_auto->isChecked();
 		bool hori_flip = ui->checkBox_horiflip->isChecked();
 		bool keep_ratio = ui->checkBox_keepratio->isChecked();
-		int target = ui->comboBox_target->value();
+		int target = ui->comboBox_target->CurrentIndex();
 		int delay = ui->horizontalSlider->value();
 		config_set_bool(config, "VirtualOutput", "AutoStart", autostart);
 		config_set_bool(config, "VirtualOutput", "HoriFlip", hori_flip);
